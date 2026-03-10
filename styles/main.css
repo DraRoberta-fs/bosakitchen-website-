@@ -216,6 +216,15 @@ img {
     color: var(--color-secondary);
 }
 
+.navbar.scrolled .btn-secondary {
+    border-color: var(--color-secondary);
+}
+
+.navbar.scrolled .btn-secondary:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light) !important;
+}
+
 .navbar.scrolled .hamburger .bar {
     background-color: var(--color-secondary);
 }
