@@ -205,7 +205,13 @@ img {
     box-shadow: var(--shadow-sm);
 }
 
-.navbar.scrolled .logo, 
+.navbar.scrolled .logo {
+    color: var(--color-secondary);
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
 .navbar.scrolled .nav-links li a:not(.btn-primary) {
     color: var(--color-secondary);
 }
@@ -229,6 +235,19 @@ img {
     font-weight: 700;
     color: var(--color-text-light);
     letter-spacing: 1px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition-normal);
+}
+
+.logo:hover {
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
 }
 
 .nav-links {
