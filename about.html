@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Bosa Kitchen</title>
+    <!-- SEO Optimizations -->
+    <meta name="description" content="Discover the story behind Bosa Kitchen, offering authentic Lebanese recipes passed down through generations.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .about-hero {
+            position: relative;
+            padding: 12rem 0 6rem;
+            background: linear-gradient(to right, var(--color-secondary), var(--color-secondary-light));
+            color: var(--color-text-light);
+            text-align: center;
+        }
+        .about-content {
+            padding: var(--space-xl) 0;
+        }
+        /* Make sure navbar links look proper when solid */
+        .navbar.solid-bg {
+            background: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: var(--shadow-sm) !important;
+            padding: 1rem 0;
+        }
+        .navbar.solid-bg .logo {
+            color: var(--color-secondary) !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+        .navbar.solid-bg .nav-links li a:not(.btn-primary) {
+            color: var(--color-secondary) !important;
+        }
+        .navbar.solid-bg .btn-secondary {
+            border-color: var(--color-secondary) !important;
+            color: var(--color-secondary) !important;
+        }
+        .navbar.solid-bg .btn-secondary:hover {
+            background-color: var(--color-secondary) !important;
+            color: var(--color-text-light) !important;
+        }
+        .navbar.solid-bg .hamburger .bar {
+            background-color: var(--color-secondary) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar solid-bg" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="BOSA Kitchen" style="height: 96px; width: auto; max-width: 300px;">
+            </a>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="index.html#menu">Our Menu</a></li>
+                <li><a href="index.html#locations">Restaurants</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html#locations" class="btn-secondary nav-btn">Reservation</a></li>
+                <li><a href="https://bosakitchen.ordertiger.com/" class="btn-primary nav-btn" target="_blank">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="about-hero">
+        <div class="container">
+            <h1 class="fade-up">Our Story</h1>
+            <p class="fade-up delay-1">Passion to Deliver</p>
+        </div>
+    </header>
+
+    <!-- Main About Content -->
+    <section class="about-content">
+        <div class="container layout-grid">
+            <div class="story-image slide-right">
+                <img src="assets/about-1.jpg" alt="Passion to Deliver - Heritage">
+            </div>
+            <div class="story-text slide-left">
+                <h2 class="section-title">Passion to Deliver</h2>
+                <div style="width: 50px; height: 3px; background-color: var(--color-primary); margin-bottom: 1.5rem;"></div>
+                <p>I come from a big family of 11 siblings, when my mum cooked it was as if she was cooking a feast for us every day. Me and my babba (Dad) used to go to the fields and pick our own organic fruit and vegetable from our land for the family.</p>
+                <p>Over the years this wealth of knowledge and recipes have been passed down through the generations and we have now formed Bosa Kitchen to give the people of London a chance to try our exquisite recipes from our heritage.</p>
+            </div>
+        </div>
+
+        <div class="container layout-grid" style="margin-top: var(--space-xl);">
+            <div class="story-text slide-right">
+                <h2 class="section-title">Catering & Events</h2>
+                <div style="width: 50px; height: 3px; background-color: var(--color-primary); margin-bottom: 1.5rem;"></div>
+                <p>Bosa Kitchen also caters for your private events, large and small, from casual brunches with family and friends to posh canapé receptions! Whatever the occasion, we promise to impress your guests with an authentic Lebanese feast.</p>
+                <p>You can customise your menu from our "à la carte" section or choose from one of our carefully designed set menus. Whatever you decide, we will be on hand to assist you throughout.</p>
+                <a href="#contact" class="btn-primary" style="margin-top: 1rem;">Contact Us for Catering</a>
+            </div>
+            <div class="story-image slide-left">
+                <img src="assets/about-2.jpg" alt="Bosa Main Courses Set">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="BOSA Kitchen" style="height: 120px; width: auto; margin-bottom: 1rem; filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.5));">
+                    <p>Authentic Lebanese recipes passed down through generations. From our kitchen to your heart.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="index.html#menu">Menu</a></li>
+                        <li><a href="index.html#locations">Restaurants</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/bosakitchen" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/bosakitchen/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/bosakitchen" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d9586365-Reviews-Bosa_Kitchen-London_England.html" target="_blank" aria-label="TripAdvisor" style="display: flex; align-items: center; justify-content: center;">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="1em" height="1em"><title>Tripadvisor</title><path d="M12.006 4.295c-2.67 0-5.338.784-7.645 2.353H0l1.963 2.135a5.997 5.997 0 0 0 4.04 10.43 5.976 5.976 0 0 0 4.075-1.6L12 19.705l1.922-2.09a5.972 5.972 0 0 0 4.072 1.598 6 6 0 0 0 6-5.998 5.982 5.982 0 0 0-1.957-4.432L24 6.648h-4.35a13.573 13.573 0 0 0-7.644-2.353zM12 6.255c1.531 0 3.063.303 4.504.903C13.943 8.138 12 10.43 12 13.1c0-2.671-1.942-4.962-4.504-5.942A11.72 11.72 0 0 1 12 6.256zM6.002 9.157a4.059 4.059 0 1 1 0 8.118 4.059 4.059 0 0 1 0-8.118zm11.992.002a4.057 4.057 0 1 1 .003 8.115 4.057 4.057 0 0 1-.003-8.115zm-11.992 1.93a2.128 2.128 0 0 0 0 4.256 2.128 2.128 0 0 0 0-4.256zm11.992 0a2.128 2.128 0 0 0 0 4.256 2.128 2.128 0 0 0 0-4.256z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-apps">
+                    <h4>Download Our App</h4>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/bosa-kitchen/id1383877331" target="_blank" class="btn-secondary">App Store</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.bosakitchen.bosakitchenapp&gl=GB" target="_blank" class="btn-secondary">Google Play</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 BOSA Kitchen. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/app.js"></script>
+</body>
+</html>
