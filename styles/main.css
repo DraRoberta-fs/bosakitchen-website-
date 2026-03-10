@@ -244,12 +244,10 @@ img {
     font-weight: 700;
     color: var(--color-text-light);
     letter-spacing: 1px;
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.85);
     padding: 0.5rem 1rem;
     border-radius: var(--radius-md);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-sm);
     display: inline-flex;
     align-items: center;
     transition: var(--transition-normal);
