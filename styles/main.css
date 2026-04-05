@@ -1,25 +1,27 @@
 :root {
-    /* Color Palette - Modern Mediterranean */
-    --color-primary: #D35400; /* Terracotta / Spice */
-    --color-primary-light: #E67E22;
-    --color-primary-dark: #A04000;
+    /* Color Palette - Bridge Baker Inspired */
+    --color-primary: #E67E22; /* Warm Orange */
+    --color-primary-light: #F39C12;
+    --color-primary-dark: #D35400;
     
-    --color-secondary: #2C3E50; /* Deep Sea Blue */
-    --color-secondary-light: #34495E;
+    --color-secondary: #3A2B1D; /* Dark Brown/Charcoal */
+    --color-secondary-light: #4A3728;
     
-    --color-accent: #F39C12; /* Saffron Gold */
+    --color-nav-brown: #4A3728; /* Dark Brown like Bridge Baker */
     
-    --color-bg-light: #FDFEFE; /* Pure White */
-    --color-bg-warm: #F9EBEA; /* Warm Sand */
+    --color-accent: #E67E22; /* Orange Accent */
+    
+    --color-bg-light: #FFFFFF; /* Pure White */
+    --color-bg-warm: #F8F6F3; /* Warm Cream */
     --color-surface: #FFFFFF;
     
-    --color-text-main: #1C2833;
-    --color-text-muted: #566573;
-    --color-text-light: #F8F9F9;
+    --color-text-main: #3A2B1D;
+    --color-text-muted: #6B5B47;
+    --color-text-light: #FFFFFF;
     
     /* Typography */
-    --font-primary: 'Outfit', sans-serif;
-    --font-heading: 'Playfair Display', serif;
+    --font-primary: 'Inter', sans-serif;
+    --font-heading: 'Dancing Script', cursive;
     
     /* Spacing System */
     --space-xs: 0.5rem;
@@ -146,26 +148,28 @@ img {
 .btn-primary {
     background-color: var(--color-primary);
     color: var(--color-text-light);
-    border: 2px solid var(--color-primary);
-    box-shadow: var(--shadow-sm);
+    border: none;
+    box-shadow: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .btn-primary:hover {
     background-color: var(--color-primary-dark);
-    border-color: var(--color-primary-dark);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: none;
+    box-shadow: none;
 }
 
 .btn-secondary {
-    background-color: transparent;
-    color: var(--color-text-light);
-    border: 2px solid var(--color-text-light);
+    background-color: var(--color-bg-light);
+    color: var(--color-nav-brown);
+    border: 2px solid var(--color-bg-light);
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-text-light);
-    color: var(--color-secondary);
+    background-color: var(--color-bg-warm);
+    color: var(--color-nav-brown);
     transform: translateY(-2px);
 }
 
@@ -195,11 +199,11 @@ img {
     z-index: 1000;
     padding: 1.5rem 0;
     transition: var(--transition-normal);
-    background: transparent;
+    background: var(--color-nav-brown);
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--color-nav-brown);
     backdrop-filter: blur(10px);
     padding: 1rem 0;
     box-shadow: var(--shadow-sm);
@@ -239,23 +243,13 @@ img {
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--color-text-light);
-    letter-spacing: 1px;
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
     display: inline-flex;
     align-items: center;
     transition: var(--transition-normal);
+    text-decoration: none;
 }
 
 .logo:hover {
-    background-color: var(--color-surface);
-    box-shadow: var(--shadow-md);
     transform: translateY(-2px);
 }
 
@@ -268,22 +262,14 @@ img {
 .nav-links li a:not(.btn-primary) {
     color: var(--color-text-light);
     font-weight: 500;
-    position: relative;
-}
-
-.nav-links li a:not(.btn-primary)::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-primary);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     transition: var(--transition-normal);
 }
 
-.nav-links li a:not(.btn-primary):hover::after {
-    width: 100%;
+.nav-links li a:not(.btn-primary):hover {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .nav-btn {
@@ -359,7 +345,12 @@ img {
     display: flex;
     align-items: center;
     background: url('../assets/hero-bg.jpg') center/cover no-repeat;
-    /* We will load this asset later */
+    animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+    from { background-size: 100%; }
+    to   { background-size: 115%; }
 }
 
 .hero-overlay {
@@ -368,7 +359,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(28, 40, 51, 0.8), rgba(28, 40, 51, 0.4));
+    background: linear-gradient(to right, rgba(28, 40, 51, 0.4), rgba(28, 40, 51, 0.35));
 }
 
 .hero-content {
@@ -425,17 +416,6 @@ img {
     opacity: 0.2;
 }
 
-.story-image::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    width: 200px;
-    height: 200px;
-    border: 3px solid var(--color-primary);
-    border-radius: var(--radius-lg);
-    z-index: -1;
-}
 
 .story-text p {
     color: var(--color-text-muted);
@@ -475,6 +455,7 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.6s ease;
 }
 
@@ -501,7 +482,7 @@ img {
 }
 
 .menu-item-content h4 {
-    color: var(--color-accent);
+    color: var(--color-text-light);
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -524,6 +505,20 @@ img {
     opacity: 1;
 }
 
+/* ================= Awards Section ================= */
+.awards-grid {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-md);
+}
+
+.awards-grid img {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+}
+
 /* ================= Locations Section ================= */
 .locations-header {
     margin-bottom: var(--space-xl);
@@ -542,6 +537,8 @@ img {
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: var(--transition-normal);
+    display: flex;
+    flex-direction: column;
 }
 
 .location-card:hover {
@@ -553,6 +550,7 @@ img {
     position: relative;
     height: 220px;
     background-color: var(--color-bg-warm);
+    overflow: hidden;
 }
 
 .card-image img {
@@ -575,6 +573,13 @@ img {
 
 .card-content {
     padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-actions {
+    margin-top: auto;
 }
 
 .card-content h3 {
@@ -755,3 +760,26 @@ img {
 .delay-1 { transition-delay: 0.2s; }
 .delay-2 { transition-delay: 0.4s; }
 .delay-3 { transition-delay: 0.6s; }
+
+/* ================= Buttons ================= */
+.btn-primary, .btn-secondary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 0.8rem 1.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    transition: var(--transition-normal);
+    cursor: pointer;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
