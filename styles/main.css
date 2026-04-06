@@ -266,6 +266,7 @@ img {
     align-items: center;
     transition: var(--transition-normal);
     text-decoration: none;
+    margin-right: 3rem;
 }
 
 .logo:hover {
