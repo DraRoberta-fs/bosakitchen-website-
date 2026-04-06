@@ -318,7 +318,17 @@ img {
     .hamburger {
         display: block;
     }
-    
+
+    /* Reduce logo size on mobile */
+    .navbar .logo img {
+        height: 64px !important;
+    }
+
+    /* Remove logo right margin on mobile so hamburger doesn't get pushed */
+    .logo {
+        margin-right: 0;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
@@ -331,21 +341,22 @@ img {
         align-items: center;
         transition: var(--transition-normal);
         box-shadow: var(--shadow-lg);
+        z-index: 999;
     }
-    
+
     .nav-links.active {
         right: 0;
     }
-    
+
     .nav-links li {
         margin: 1.5rem 0;
     }
-    
+
     .nav-links li a:not(.btn-primary) {
         color: var(--color-secondary);
         font-size: 1.2rem;
     }
-    
+
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
@@ -356,6 +367,19 @@ img {
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
         background-color: var(--color-secondary);
+    }
+
+    /* Reduce section padding on mobile */
+    .section-padding {
+        padding: 3rem 0;
+    }
+
+    /* Tighter container padding on mobile */
+    .container,
+    .nav-container,
+    .hero-content {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
 }
 

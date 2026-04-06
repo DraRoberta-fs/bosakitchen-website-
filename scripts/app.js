@@ -23,19 +23,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnOrder = navbar.querySelector('.btn-primary');
 
     function applyNavColors() {
-        // Regular links — always white
+        const isMobile = window.innerWidth <= 992;
+
         navAnchors.forEach(a => {
-            a.style.color = '#ffffff';
+            // On mobile the panel has a white background — use dark text
+            // On desktop keep white text against the brown/dark navbar
+            a.style.color = isMobile ? '#3A2B1D' : '#ffffff';
             a.style.transition = 'none';
         });
-        // Reservation — transparent bg, orange border + text
+
+        // Buttons stay the same on both breakpoints
         if (btnReservation) {
             btnReservation.style.backgroundColor = 'transparent';
             btnReservation.style.color = '#E67E22';
             btnReservation.style.border = '2px solid #E67E22';
             btnReservation.style.transition = 'none';
         }
-        // Order Now — solid orange, white text
         if (btnOrder) {
             btnOrder.style.backgroundColor = '#E67E22';
             btnOrder.style.color = '#ffffff';
