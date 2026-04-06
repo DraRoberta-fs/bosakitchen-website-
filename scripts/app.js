@@ -18,13 +18,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar Scroll Effect
     const navbar = document.getElementById('navbar');
-    
+    const navAnchors = navbar.querySelectorAll('a:not(.btn-primary):not(.btn-secondary):not(.logo)');
+    const btnReservation = navbar.querySelector('.btn-secondary');
+    const btnOrder = navbar.querySelector('.btn-primary');
+
+    function applyNavColors() {
+        // Regular links — always white
+        navAnchors.forEach(a => {
+            a.style.color = '#ffffff';
+            a.style.transition = 'none';
+        });
+        // Reservation — transparent bg, orange border + text
+        if (btnReservation) {
+            btnReservation.style.backgroundColor = 'transparent';
+            btnReservation.style.color = '#E67E22';
+            btnReservation.style.border = '2px solid #E67E22';
+            btnReservation.style.transition = 'none';
+        }
+        // Order Now — solid orange, white text
+        if (btnOrder) {
+            btnOrder.style.backgroundColor = '#E67E22';
+            btnOrder.style.color = '#ffffff';
+            btnOrder.style.border = 'none';
+            btnOrder.style.transition = 'none';
+        }
+    }
+
+    // Apply immediately on load — inline styles beat any CSS rule
+    applyNavColors();
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
+        // Re-apply after every scroll tick to prevent any flash
+        applyNavColors();
     });
 
     // Intersection Observer for Scroll Animations

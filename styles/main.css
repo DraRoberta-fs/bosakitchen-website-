@@ -198,45 +198,65 @@ img {
     width: 100%;
     z-index: 1000;
     padding: 1.5rem 0;
-    transition: var(--transition-normal);
-    background: var(--color-nav-brown);
+    /* background transitions smoothly — no color transitions */
+    transition: background var(--transition-normal), padding var(--transition-normal), box-shadow var(--transition-normal);
+    background: transparent;
+    color: var(--color-text-light);
 }
 
 .navbar.scrolled {
-    background: var(--color-nav-brown);
+    background: rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(10px);
     padding: 1rem 0;
     box-shadow: var(--shadow-sm);
 }
 
-.navbar.scrolled .logo {
-    color: var(--color-secondary);
-    background-color: transparent;
-    box-shadow: none;
-    padding: 0;
+/* Lock all anchor text in navbar to white, no color transition */
+.navbar a {
+    color: var(--color-text-light) !important;
+    transition: none !important;
 }
 
-.navbar.scrolled .nav-links li a:not(.btn-primary) {
-    color: var(--color-secondary);
+/* Override global btn transition inside navbar — no color/border animation */
+.navbar .btn-primary,
+.navbar .btn-secondary {
+    transition: background-color var(--transition-normal) !important;
 }
 
-.navbar.scrolled .btn-secondary {
-    border-color: var(--color-secondary);
+/* "Order Now" — solid orange, always */
+.navbar .btn-primary {
+    background-color: var(--color-primary) !important;
+    color: var(--color-text-light) !important;
+    border: none !important;
 }
 
-.navbar.scrolled .btn-secondary:hover {
-    background-color: var(--color-secondary);
+.navbar .btn-primary:hover {
+    background-color: var(--color-primary-dark) !important;
+}
+
+/* "Reservation" — transparent with orange border, always */
+.navbar .btn-secondary {
+    background-color: transparent !important;
+    color: var(--color-primary) !important;
+    border: 2px solid var(--color-primary) !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+}
+
+.navbar .btn-secondary:hover {
+    background-color: var(--color-primary) !important;
     color: var(--color-text-light) !important;
 }
 
 .navbar.scrolled .hamburger .bar {
-    background-color: var(--color-secondary);
+    background-color: var(--color-text-light);
 }
 
 .nav-container {
     max-width: var(--container-max);
     margin: 0 auto;
-    padding: 0 var(--space-md);
+    padding: 0 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -256,7 +276,7 @@ img {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+    gap: 3rem;
 }
 
 .nav-links li a:not(.btn-primary) {
@@ -265,7 +285,7 @@ img {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    transition: var(--transition-normal);
+    transition: none;
 }
 
 .nav-links li a:not(.btn-primary):hover {
@@ -634,6 +654,7 @@ img {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: var(--space-lg);
+    align-items: start;
     margin-bottom: var(--space-xl);
 }
 
@@ -651,6 +672,11 @@ img {
     .social-icons, .app-links {
         justify-content: center;
     }
+}
+
+.footer-brand img {
+    height: 80px;
+    width: auto;
 }
 
 .footer-brand h2 {
@@ -701,6 +727,7 @@ img {
     border-radius: 50%;
     color: var(--color-text-light);
     font-weight: 700;
+    transition: background-color var(--transition-normal), transform var(--transition-normal);
 }
 
 .social-icons a:hover {
