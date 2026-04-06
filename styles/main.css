@@ -200,7 +200,7 @@ img {
     padding: 1.5rem 0;
     /* background transitions smoothly — no color transitions */
     transition: background var(--transition-normal), padding var(--transition-normal), box-shadow var(--transition-normal);
-    background: transparent;
+    background: var(--color-nav-brown);
     color: var(--color-text-light);
 }
 
@@ -285,6 +285,7 @@ img {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    white-space: nowrap;
     transition: none;
 }
 
