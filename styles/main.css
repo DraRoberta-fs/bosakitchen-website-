@@ -227,6 +227,7 @@ img {
     background-color: var(--color-primary) !important;
     color: var(--color-text-light) !important;
     border: none !important;
+    white-space: nowrap;
 }
 
 .navbar .btn-primary:hover {
