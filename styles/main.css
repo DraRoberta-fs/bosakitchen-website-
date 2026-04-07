@@ -768,6 +768,14 @@ img {
     gap: 1rem;
 }
 
+.app-links .btn-secondary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: var(--space-md);
