@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
+        applyNavColors();
     });
 
     // Close mobile menu when a link is clicked
@@ -49,6 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Apply immediately on load — inline styles beat any CSS rule
     applyNavColors();
+
+    window.addEventListener('resize', applyNavColors);
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {

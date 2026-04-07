@@ -334,15 +334,18 @@ img {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 70%;
+        width: 75%;
         height: 100vh;
-        background-color: var(--color-surface);
+        background-color: var(--color-nav-brown);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: var(--transition-normal);
+        gap: 0;
+        transition: right var(--transition-normal);
         box-shadow: var(--shadow-lg);
         z-index: 999;
+        overflow-y: auto;
+        padding: 2rem 0;
     }
 
     .nav-links.active {
@@ -350,12 +353,38 @@ img {
     }
 
     .nav-links li {
-        margin: 1.5rem 0;
+        margin: 1rem 0;
+        width: 80%;
+        text-align: center;
     }
 
-    .nav-links li a:not(.btn-primary) {
-        color: var(--color-secondary);
-        font-size: 1.2rem;
+    /* Regular links — white on brown */
+    .nav-links li a:not(.btn-primary):not(.btn-secondary) {
+        color: #ffffff !important;
+        font-size: 1.1rem;
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    /* Reservation button in mobile menu */
+    .nav-links .btn-secondary {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: transparent !important;
+        color: var(--color-primary) !important;
+        border: 2px solid var(--color-primary) !important;
+        padding: 0.75rem 1rem;
+    }
+
+    /* Order Now button in mobile menu */
+    .nav-links .btn-primary {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: var(--color-primary) !important;
+        color: #ffffff !important;
+        padding: 0.75rem 1rem;
     }
 
     .hamburger.active .bar:nth-child(2) {
@@ -363,11 +392,11 @@ img {
     }
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
-        background-color: var(--color-secondary);
+        background-color: var(--color-text-light);
     }
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
-        background-color: var(--color-secondary);
+        background-color: var(--color-text-light);
     }
 
     /* Reduce section padding on mobile */
