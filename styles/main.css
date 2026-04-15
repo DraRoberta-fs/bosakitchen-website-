@@ -273,6 +273,10 @@ img {
     transition: var(--transition-normal);
     text-decoration: none;
     margin-right: 3rem;
+    background-color: var(--color-sand);
+    border-radius: 14px;
+    padding: 0.4rem 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 
 .logo:hover {
