@@ -480,6 +480,17 @@ img {
     flex-wrap: wrap;
 }
 
+.hero-buttons .btn-primary {
+    background-color: #ffffff;
+    color: var(--color-secondary);
+    border: none;
+}
+
+.hero-buttons .btn-primary:hover {
+    background-color: var(--color-sand);
+    color: var(--color-secondary);
+}
+
 /* ================= Story Section ================= */
 .story-image {
     position: relative;
