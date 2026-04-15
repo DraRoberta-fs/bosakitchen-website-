@@ -24,27 +24,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnOrder = navbar.querySelector('.btn-primary');
 
     function applyNavColors() {
-        const isMobile = window.innerWidth <= 992;
+        const isMobile   = window.innerWidth <= 992;
+        const isScrolled = window.scrollY > 50;
 
         navAnchors.forEach(a => {
-            // On mobile the panel has a white background — use dark text
-            // On desktop keep white text against the brown/dark navbar
-            a.style.color = isMobile ? '#3A2B1D' : '#ffffff';
-            a.style.transition = 'none';
+            if (isMobile) {
+                // Mobile menu panel is brown — white links
+                a.style.color = '#ffffff';
+            } else if (isScrolled) {
+                // Cream header — charcoal links
+                a.style.color = '#2D3436';
+            } else {
+                // Transparent header — white links
+                a.style.color = '#ffffff';
+            }
+            a.style.transition = 'color 0.3s ease-in-out';
         });
 
-        // Buttons stay the same on both breakpoints
+        // Buttons: orange always, regardless of scroll or breakpoint
         if (btnReservation) {
             btnReservation.style.backgroundColor = 'transparent';
             btnReservation.style.color = '#E67E22';
             btnReservation.style.border = '2px solid #E67E22';
-            btnReservation.style.transition = 'none';
+            btnReservation.style.transition = 'background-color 0.3s ease-in-out';
         }
         if (btnOrder) {
             btnOrder.style.backgroundColor = '#E67E22';
             btnOrder.style.color = '#ffffff';
             btnOrder.style.border = 'none';
-            btnOrder.style.transition = 'none';
+            btnOrder.style.transition = 'background-color 0.3s ease-in-out';
         }
     }
 
