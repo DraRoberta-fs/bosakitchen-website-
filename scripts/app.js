@@ -1,8 +1,15 @@
-// Prevent browser from restoring scroll position on reload
+// Always open at the top — clear any hash and force scroll on full load
 if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
 }
-window.scrollTo(0, 0);
+
+window.addEventListener('load', () => {
+    // Strip the hash so the browser doesn't anchor to #contact or any section
+    if (window.location.hash) {
+        history.replaceState(null, '', window.location.pathname);
+    }
+    window.scrollTo({ top: 0, behavior: 'instant' });
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle
