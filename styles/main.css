@@ -270,13 +270,18 @@ img {
 .logo {
     display: inline-flex;
     align-items: center;
-    transition: var(--transition-normal);
     text-decoration: none;
     margin-right: 3rem;
-    background-color: var(--color-sand);
-    border-radius: 14px;
-    padding: 0.4rem 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* Logo image filter changes with scroll state */
+.navbar .logo img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease-in-out;
+}
+
+.navbar.scrolled .logo img {
+    filter: sepia(1) saturate(1.8) hue-rotate(18deg) brightness(1.15) contrast(1.2);
 }
 
 .logo:hover {
