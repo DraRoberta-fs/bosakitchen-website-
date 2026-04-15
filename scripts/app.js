@@ -41,12 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
             a.style.transition = 'color 0.3s ease-in-out';
         });
 
-        // Buttons: orange always, regardless of scroll or breakpoint
+        // Reservation: white border+text on transparent header, orange when scrolled or mobile
         if (btnReservation) {
+            const reservationColor = (!isMobile && !isScrolled) ? '#ffffff' : '#E67E22';
             btnReservation.style.backgroundColor = 'transparent';
-            btnReservation.style.color = '#E67E22';
-            btnReservation.style.border = '2px solid #E67E22';
-            btnReservation.style.transition = 'background-color 0.3s ease-in-out';
+            btnReservation.style.color = reservationColor;
+            btnReservation.style.border = `2px solid ${reservationColor}`;
+            btnReservation.style.transition = 'color 0.3s ease-in-out, border-color 0.3s ease-in-out';
         }
         if (btnOrder) {
             btnOrder.style.backgroundColor = '#E67E22';
