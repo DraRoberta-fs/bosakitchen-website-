@@ -276,7 +276,7 @@ img {
 
 /* Logo image filter changes with scroll state */
 .navbar .logo img {
-    filter: brightness(0) saturate(100%) invert(59%) sepia(91%) saturate(588%) hue-rotate(346deg) brightness(98%);
+    filter: brightness(0) saturate(100%) invert(59%) sepia(91%) saturate(588%) hue-rotate(346deg) brightness(72%);
     transition: filter 0.3s ease-in-out;
 }
 
