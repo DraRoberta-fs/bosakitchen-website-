@@ -27,33 +27,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const isMobile   = window.innerWidth <= 992;
         const isScrolled = window.scrollY > 50;
 
+        // Nav links: white at top → charcoal on scroll (mobile always white on brown panel)
         navAnchors.forEach(a => {
-            if (isMobile) {
-                // Mobile menu panel is brown — white links
-                a.style.color = '#ffffff';
-            } else if (isScrolled) {
-                // Cream header — charcoal links
-                a.style.color = '#2D3436';
-            } else {
-                // Transparent header — white links
-                a.style.color = '#ffffff';
-            }
-            a.style.transition = 'color 0.3s ease-in-out';
+            a.style.color = (isMobile || !isScrolled) ? '#ffffff' : '#2D3436';
         });
 
-        // Reservation: white border+text on transparent header, orange when scrolled or mobile
+        // Reservation: white at top → orange on scroll (always orange on mobile)
         if (btnReservation) {
-            const reservationColor = (!isMobile && !isScrolled) ? '#ffffff' : '#E67E22';
-            btnReservation.style.backgroundColor = 'transparent';
-            btnReservation.style.color = reservationColor;
-            btnReservation.style.border = `2px solid ${reservationColor}`;
-            btnReservation.style.transition = 'color 0.3s ease-in-out, border-color 0.3s ease-in-out';
+            const color = (!isMobile && !isScrolled) ? '#ffffff' : '#E67E22';
+            btnReservation.style.color       = color;
+            btnReservation.style.borderColor = color;
         }
+
+        // Order Now: always solid orange
         if (btnOrder) {
             btnOrder.style.backgroundColor = '#E67E22';
-            btnOrder.style.color = '#ffffff';
-            btnOrder.style.border = 'none';
-            btnOrder.style.transition = 'background-color 0.3s ease-in-out';
+            btnOrder.style.color           = '#ffffff';
         }
     }
 

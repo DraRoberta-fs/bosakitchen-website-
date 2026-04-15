@@ -216,46 +216,41 @@ img {
     background-color: var(--color-secondary);
 }
 
-/* Nav link color transitions handled by JS inline styles */
+/* All navbar links — JS controls color, CSS controls transition */
 .navbar a {
-    transition: color 0.3s ease-in-out !important;
-}
-
-/* Override global btn transition inside navbar — no color/border animation */
-.navbar .btn-primary,
-.navbar .btn-secondary {
-    transition: background-color var(--transition-normal) !important;
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out !important;
 }
 
 /* "Order Now" — solid orange, always */
 .navbar .btn-primary {
-    background-color: var(--color-primary) !important;
-    color: var(--color-text-light) !important;
-    border: none !important;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
     white-space: nowrap;
+    transition: background-color 0.3s ease-in-out !important;
 }
 
 .navbar .btn-primary:hover {
-    background-color: var(--color-primary-dark) !important;
+    background-color: var(--color-primary-dark);
 }
 
-/* "Reservation" — transparent with orange border, always */
+/* "Reservation" — JS controls color/border per scroll state */
 .navbar .btn-secondary {
-    background-color: transparent !important;
-    color: var(--color-primary) !important;
-    border: 2px solid var(--color-primary) !important;
-    text-transform: uppercase !important;
-    font-weight: 700 !important;
-    letter-spacing: 1px !important;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    /* color & border set by JS inline styles */
 }
 
-.navbar .btn-secondary:hover {
-    background-color: var(--color-primary) !important;
-    color: var(--color-text-light) !important;
+/* Hamburger: white at top, charcoal when scrolled */
+.navbar .hamburger .bar {
+    transition: background-color 0.3s ease-in-out;
 }
 
 .navbar.scrolled .hamburger .bar {
-    background-color: var(--color-text-light);
+    background-color: var(--color-secondary);
 }
 
 .nav-container {
